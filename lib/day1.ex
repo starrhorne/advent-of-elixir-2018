@@ -4,11 +4,11 @@ defmodule Day1 do
 
   ## Examples
 
-      iex> Day1.solve(["1\n", "-2\n","3"])
+      iex> Day1.solve_part_1(["1\n", "-2\n","3"])
       2
 
   """
-  def solve(data) do
+  def solve_part_1(data) do
     data |> prepare |> transform
   end
 
