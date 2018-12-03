@@ -1,8 +1,4 @@
 defmodule Day1 do
-  @moduledoc """
-  Day1 Excercise Solution
-  """
-
   @doc ~S"""
   Convert a collection of strings into integers and sum them. 
 
