@@ -8,7 +8,7 @@ defmodule Day2 do
 
     for id <- ids do
       for id2 <- ids do
-        compare(String.codepoints(id), String.codepoints(id2)) |> List.to_string()
+        compare(String.graphemes(id), String.graphemes(id2)) |> List.to_string()
       end
       |> Enum.filter(fn x -> String.length(x) == 25 end)
     end
@@ -23,9 +23,7 @@ defmodule Day2 do
     end
   end
 
-  def compare([], []) do
-    []
-  end
+  def compare([], []), do: []
 
   def compare(string1, string2) do
     [s1_head | s1_tail] = string1
@@ -79,7 +77,7 @@ defmodule Day2 do
       %{"a" => 1, "b" => 2, "c" => 3}
   """
   def occurrence_frequencies(text) do
-    String.codepoints(text)
+    String.graphemes(text)
     |> Enum.reduce(%{}, fn char, map ->
       Map.update(map, char, 1, &(&1 + 1))
     end)
